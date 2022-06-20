@@ -6,7 +6,7 @@ let Timer = (props) =>{
         return date2 - date1;
     }
     let end_date = {
-        "full_year": "2022",
+        "full_year": "2023",
         "month": "06",
         "day": "19",
         "hours": "15",
