@@ -26,12 +26,15 @@ export const usersAPI = {
 }
 export const profileAPI = {
     getProfile(profileId) {
+        axios.defaults.withCredentials = true;
         return instance.get(`profile/` + profileId)
     },
     getStatus(profileId){
+        axios.defaults.withCredentials = true;
         return instance.get(`profile/status/` + profileId)
     },
     updateStatus(status){
+        axios.defaults.withCredentials = true;
         return instance.put(`profile/status`, {status:status})
     },
 }
@@ -49,6 +52,7 @@ export const authAPI = {
 }
 export const securityAPI = {
     getCaptchaUrl(){
+        axios.defaults.withCredentials = true;
         return instance.get(`security/get-captcha-url`)
     },
 
