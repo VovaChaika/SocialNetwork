@@ -11,15 +11,18 @@ const instance = axios.create({
 
 export const usersAPI = {
     getUsers: (currentPage = 1, pageSize = 10) => {
+        axios.defaults.withCredentials = true;
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
             .then(response => {
                 return response.data
             })
     },
     follow(userId) {
+        axios.defaults.withCredentials = true;
         return instance.post(`follow/${userId}`)
     },
     unfollow(userId) {
+        axios.defaults.withCredentials = true;
         return instance.delete(`follow/${userId}`)
     }
 }
@@ -43,9 +46,11 @@ export const authAPI = {
         return instance.get(`auth/me`)
     },
     login(email, password, rememberMe=false, captcha){
+        axios.defaults.withCredentials = true;
         return instance.post(`auth/login`, {email, password, rememberMe, captcha})
     },
     logout(){
+        axios.defaults.withCredentials = true;
         return instance.delete(`auth/login`)
     }
 }
