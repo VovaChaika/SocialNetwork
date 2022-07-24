@@ -25,7 +25,7 @@ let Timer = (props) =>{
         } else {
             let res = new Date(ms_left);
             let str_timer = `${res.getUTCFullYear() - 1970}.${res.getUTCMonth()}.${res.getUTCDate() - 1} ${res.getUTCHours()}:${res.getUTCMinutes()}:${res.getUTCSeconds()}`;
-            timer_show.innerHTML = str_timer;
+            // timer_show.innerHTML = str_timer;
             return str_timer
         }
     }, 1000)

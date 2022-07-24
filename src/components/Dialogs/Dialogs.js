@@ -15,7 +15,8 @@ const Dialogs = (props) => {
         .map((elem) => <Message key={elem.id} id={elem.id} text={elem.text}/>)
 
     let addNewMessage = (values) => {
-        props.sendMessageOnClick(values.newMessageBody)
+        props.sendMessageOnClick
+        (values.newMessageBody)
     }
 
     if (!props.isAuth) {

@@ -1,5 +1,10 @@
 import React from "react";
-import {addPostActionCreator, newTextOnChangeActionCreator} from "../../../redux/profile_reducer";
+import {
+    addPostActionCreator,
+    newTextOnChangeActionCreator,
+    setLike,
+    removeLike,
+} from "../../../redux/profile_reducer";
 import MyPosts from "./MyPosts";
 import StoreContext from "../../../storeContext";
 import {connect} from "react-redux";
@@ -39,6 +44,12 @@ let mapDispatchToProps = (dispatch) =>{
     return{
         addPostOnChange: (newPostText) => {
             dispatch(addPostActionCreator(newPostText))
+        },
+        setLike: (postId) => {
+            dispatch(setLike(postId))
+        },
+        removeLike: (postId) => {
+            dispatch(removeLike(postId))
         }
     }
 }

@@ -8,7 +8,7 @@ const maxLengthCreator30 = maxLengthCreator(30)
 const MyPosts = (props) => {
 
     let postElements = props.state.posts
-        .map((elem) => <Post key={elem.id} id={elem.id} message={elem.message} likes={elem.likes}/>)
+        .map((elem) => <Post key={elem.id} id={elem.id} message={elem.message} likes={elem.likes} isLiked={elem.isLiked} setLike={props.setLike} removeLike={props.removeLike}/>)
     let newPostElement = React.createRef();
 
     let onAddPost = (values) => {
@@ -17,15 +17,18 @@ const MyPosts = (props) => {
 
     const AddNewPostForm=(props)=>{
         return(
-            <form onSubmit={props.handleSubmit}>
-                <Field name={"newPostText"} component={Textarea} validate={[requieredField, maxLengthCreator30]}/>
-                <button>Add post</button>
-                <button>Remove</button>
-                <div className={s.item}>
-                    New post
-                </div>
+            <>
+                <form onSubmit={props.handleSubmit}>
+                    <div className={s.item}>
+                        New post
+                    </div>
+                    <Field name={"newPostText"} component={Textarea} validate={[requieredField, maxLengthCreator30]}/>
+                    <button>Add post</button>
+                    <button>Remove</button>
+                </form>
                 {postElements}
-            </form>
+            </>
+
         )
     }
     const AddNewPostFormRedux = reduxForm({form:'ProfileAddNewPostForm'})(AddNewPostForm)
