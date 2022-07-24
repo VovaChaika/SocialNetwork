@@ -1,4 +1,5 @@
-# Getting Started with Create React App
+# NOW IT IS ON VERSEL: https://social-network-tau-orcin.vercel.app/profile
+I HAVE SWAPPED IT FROM GH PAGES
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
