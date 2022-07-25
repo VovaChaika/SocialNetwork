@@ -21,7 +21,7 @@ class App extends Component {
 
     render() {
         if (!this.props.initialized) {
-            return <Preloader/>
+            return <><Preloader/><div className={"careful"}>PLEASE USE VPN IF THE SITE ISN'T LOADING</div></>
         }
         return (
 
