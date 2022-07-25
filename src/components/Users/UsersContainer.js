@@ -7,7 +7,6 @@ import {
 } from "../../redux/users_reducer";
 import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
-import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {
     getUsersSelector,
@@ -61,5 +60,4 @@ export default compose(
         unfollow,
         getUsers,
     }),
-    withAuthRedirect,
 )(UsersContainer)

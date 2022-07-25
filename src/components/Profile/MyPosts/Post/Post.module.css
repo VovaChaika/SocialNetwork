@@ -1,6 +1,5 @@
 .content{
     grid-area: c;
-    background-color: brown;
 }
 .img{
     width: 50px;
@@ -13,4 +12,9 @@
 }
 .span{
     margin-right: 10px;
+}
+
+button:disabled,
+button[disabled]{
+   animation: step-end;
 }

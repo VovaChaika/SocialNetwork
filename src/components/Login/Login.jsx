@@ -6,6 +6,7 @@ import {connect} from "react-redux";
 import {login} from "../../redux/auth_reducer";
 import {Navigate, Redirect} from "react-router-dom";
 import style from"../common/FormsControls/FormsControls.module.css"
+import s from "./Login.module.css"
 
 const maxLengthCreator50 = maxLengthCreator(50)
 
@@ -14,7 +15,7 @@ let LoginForm = (props) => {
         console.log("Captcha value", value)
     }
 
-    return <form onSubmit={props.handleSubmit} action="">
+    return <form onSubmit={props.handleSubmit} action="" className={s.login}>
         <div>
             <Field placeholder={"Email"} name={"email"} component={Input} validate={[requieredField, maxLengthCreator50]}/>
         </div>

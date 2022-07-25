@@ -1,0 +1,17 @@
+.footer {
+    grid-area: c;
+    background-color: aquamarine;
+}
+.footer img{
+    width: 50px;
+}
+
+.loginBlock{
+    float: right;
+}
+.loginBlock a{
+    color: black;
+}
+.over{
+    color:red;
+}

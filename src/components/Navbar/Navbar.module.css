@@ -1,14 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+*{
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
 .nav {
     grid-area: n;
-    background-color: blue;
-    padding: 20px;
+    position: relative;
+    background-color: black;
+    text-decoration: none;
+    overflow: hidden;
+    border: medium dashed white;
+
+}
+ul {
+    list-style-type: none;
+    margin-top: 10%;
+}
+.item {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    transition: all 0.4s ease;
+
 }
 
-.item a {
+.item a{
     text-decoration: none;
-    color: white;
+
 }
+
 
 .item a.active {
-    color: gold;
+    text-decoration: none;
+    color: cadetblue;
+}
+
+.item:hover {
+    color: gray;
+}
+
+.icon{
+    font-size: 24px;
+    margin-right: 10px;
 }

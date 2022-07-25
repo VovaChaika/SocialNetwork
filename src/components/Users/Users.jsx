@@ -14,42 +14,38 @@ let Users = (props) => {
         }
     }
 
-    return <div>
+    return <div className={styles.users}>
         <div>
             {pages.map(p => {
-                return <span onClick={(e) => {
+                return <span className={styles.span} onClick={(e) => {
                     props.onPageChanged(p)
-                }} className={props.currentPage === p ? styles.selectedPage : ""}>{p}</span>
+                }} className={props.currentPage === p ? styles.selectedPage : styles.span}>{p}</span>
             })}
         </div>
         {
-            props.users.map(u => <div key={u.id}>
-                    <span>
-                        <div>
+            props.users.map(u => <div className={styles.div} key={u.id}>
+                    <span className={styles.span}>
+                        <span>
                             <NavLink to={'/profile/' + u.id}>
                                 <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.img}/>
                             </NavLink>
-                        </div>
-                        <div>
-                            {u.followed ? <button disabled={props.followInProgress.some(id => id === u.id)}
+                        </span>
+
+                        <span className={styles.btn2}>
+                            {u.followed ? <button className={styles.btn2} disabled={props.followInProgress.some(id => id === u.id)}
                                                   onClick={() => {
                                                       props.unfollow(u.id)
                                                   }}>UnFollow</button>
-                                : <button disabled={props.followInProgress.some(id => id === u.id)}
+                                : <button className={styles.btn2} disabled={props.followInProgress.some(id => id === u.id)}
                                           onClick={() => {
                                               props.follow(u.id)
                                           }}>Follow</button>}
-                        </div>
+                        </span>
                     </span>
                 <span>
-                        <span>
-                            <div>{u.name}</div>
-                            <div>{u.status}</div>
-                        </span>
-                        <span>
-                            <div>{'u.location.country'}</div>
-                            <div>{'u.location.city'}</div>
-                        </span>
+
+                            <div>Name: {u.name != null ? u.name : "user name"}</div>
+                            <div>Status: {u.status != null ? u.status : "none"}</div>
                     </span>
 
             </div>)
