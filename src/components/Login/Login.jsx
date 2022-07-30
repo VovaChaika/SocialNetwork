@@ -16,6 +16,7 @@ let LoginForm = (props) => {
     }
 
     return <form onSubmit={props.handleSubmit} action="" className={s.login}>
+        <div color={"red"}>*Email: free@samuraijs.com Password: free – to login</div>
         <div>
             <Field placeholder={"Email"} name={"email"} component={Input} validate={[requieredField, maxLengthCreator50]}/>
         </div>
